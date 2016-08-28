@@ -1,7 +1,5 @@
-## Just forked from [https://github.com/dockerfiles/django-uwsgi-nginx](https://github.com/dockerfiles/django-uwsgi-nginx), change Django to Flask.
 
-
-# Flask, uWSGI and Nginx in a container
+# Flask app generate with swagger-py-codegen, uWSGI and Nginx in a container
 
 This Dockerfile allows you to build a Docker container with a fairly standard
 and speedy setup for Flask with uWSGI and Nginx.
@@ -22,14 +20,15 @@ contribute patches.
 
 ### Build and run
 * docker build -t webapp .
-* docker run -d webapp
+* docker run -d -p 80:80 webapp
 
 ### How to insert your application
 
-In /app currently a flask project is created with startproject. Yowill
-probably want to replace the content of /app with the root of your flask 
-project.
+Update api.yaml
+* make all
+Update files under /app project
 
 uWSGI chdirs to /app so in uwsgi.ini you will need to make sure the python path
 to the wsgi.py file is relative to that.
 
+Change nginx-app.conf for FQDN

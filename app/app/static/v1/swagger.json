@@ -1,0 +1,35 @@
+{
+  "info": {
+    "version": "1.0", 
+    "title": "Hello World API"
+  }, 
+  "paths": {
+    "/hello/{user}": {
+      "get": {
+        "description": "Returns a greeting to the user!", 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "description": "The name of the user to greet.", 
+            "name": "user", 
+            "in": "path"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "Returns the greeting.", 
+            "schema": {
+              "type": "string"
+            }
+          }, 
+          "400": {
+            "description": "Invalid characters in \"user\" were provided."
+          }
+        }
+      }
+    }
+  }, 
+  "basePath": "/v1", 
+  "swagger": "2.0"
+}

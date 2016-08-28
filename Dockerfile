@@ -1,4 +1,4 @@
-# Copyright 2013 Thatcher Peskens
+# Copyright 2016 Vinod Gupta
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 
 from ubuntu:14.04
 
-maintainer Dockerfiles
+maintainer codervinod@gmail.com
 
 #run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 run perl -p -i.orig -e 's/archive.ubuntu.com/mirrors.aliyun.com\/ubuntu/' /etc/apt/sources.list
